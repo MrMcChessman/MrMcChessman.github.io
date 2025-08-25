@@ -1,0 +1,22 @@
+// /api/testerBackendGyat5000.js
+
+export default function handler(req, res) {
+  if (req.method === "GET") {
+    // grab parameters from the query string
+    const { p1, p2, p3, p4, p5 } = req.query;
+
+    // 🔥 Function body area — do whatever you want with params
+    let processedArray = [
+      `First: ${p1}`,
+      `Second: ${p2}`,
+      `Third: ${p3}`,
+      `Fourth: ${p4}`,
+      `Fifth: ${p5}`,
+    ];
+
+    // return array back to frontend
+    res.status(200).json({ result: processedArray });
+  } else {
+    res.status(405).json({ message: "Method not allowed" });
+  }
+}
